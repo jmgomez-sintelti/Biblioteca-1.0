@@ -40,7 +40,7 @@
 						<td><g:link action="show" id="${estadoInstance.id}">${fieldValue(bean: estadoInstance, field: "id")}</g:link></td>
 					
 						<td>${fieldValue(bean: estadoInstance, field: "nombre")}</td>						
-						<td>${fieldValue(bean: estadoInstance, field: "pais")}</td>
+<td>${fieldValue(bean: estadoInstance, field: "pais")}</td>
 					
 						<td>${fieldValue(bean: estadoInstance, field: "poblacion")}</td>
 					

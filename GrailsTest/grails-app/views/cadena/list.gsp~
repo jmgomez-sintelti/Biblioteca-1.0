@@ -32,7 +32,7 @@
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
 						<td><g:link action="show" id="${cadenaInstance.id}">${fieldValue(bean: cadenaInstance, field: "id")}</g:link></td>
-						<td>${fieldValue(bean: cadenaInstance, field: "cadenaRecibida")}</td>
+<td><g:link action="show" id="${cadenaInstance.id}">${fieldValue(bean: cadenaInstance, field: "cadenaRecibida")}</g:link></td>
 					
 					</tr>
 				</g:each>

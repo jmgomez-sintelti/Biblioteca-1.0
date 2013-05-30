@@ -2,14 +2,6 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: estadoInstance, field: 'idEstado', 'error')} required">
-	<label for="idEstado">
-		<g:message code="estado.idEstado.label" default="Id Estado" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="idEstado" required="" value="${estadoInstance?.idEstado}"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: estadoInstance, field: 'nombre', 'error')} required">
 	<label for="nombre">
 		<g:message code="estado.nombre.label" default="Nombre" />

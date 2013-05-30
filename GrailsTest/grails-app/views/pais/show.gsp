@@ -23,15 +23,6 @@
 			</g:if>
 			<ol class="property-list pais">
 			
-				<g:if test="${paisInstance?.idPais}">
-				<li class="fieldcontain">
-					<span id="idPais-label" class="property-label"><g:message code="pais.idPais.label" default="Id Pais" /></span>
-					
-						<span class="property-value" aria-labelledby="idPais-label"><g:fieldValue bean="${paisInstance}" field="idPais"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${paisInstance?.nombre}">
 				<li class="fieldcontain">
 					<span id="nombre-label" class="property-label"><g:message code="pais.nombre.label" default="Nombre" /></span>
