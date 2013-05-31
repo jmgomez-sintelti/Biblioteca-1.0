@@ -21,17 +21,17 @@ class CadenaController {
 
     def save() {
 
-		String cadena = params.cadenaRecibida
-		String remplazo = "x"
-		StringBuffer destino = new StringBuffer();
+		def cadena = params.cadenaRecibida
+		def remplazo = "x"
+		def destino = ""
 		for(int i = 0; i < cadena.length(); i++){
 			
-			if(cadena.charAt(i)=="o"){
-				destino.append(remplazo)
+			if(cadena.charAt(i)=="o"||cadena.charAt(i)=="O"){
+				destino = destino + remplazo
 				remplazo = remplazo + "x"
 			}
 			else{
-				destino.append(cadena.charAt(i))
+				destino = destino + cadena.charAt(i)
 			}
 
 		}
