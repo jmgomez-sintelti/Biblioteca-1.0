@@ -6,7 +6,7 @@ class CadenaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
-    def index() {
+	def index() {
         redirect(action: "list", params: params)
     }
 
@@ -15,12 +15,12 @@ class CadenaController {
         [cadenaInstanceList: Cadena.list(params), cadenaInstanceTotal: Cadena.count()]
     }
 
-    def create() {
+	def create() {
         [cadenaInstance: new Cadena(params)]
     }
 
     def save() {
-
+		
 		def cadena = params.cadenaRecibida
 		def remplazo = "x"
 		def destino = ""

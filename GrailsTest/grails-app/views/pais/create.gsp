@@ -3,6 +3,8 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
+		<g:setProvider library="jquery"/>
+		<g:javascript library='jquery'/>
 		<g:set var="entityName" value="${message(code: 'pais.label', default: 'Pais')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
@@ -26,7 +28,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form action="save" >
+			<!--<g:form action="save" >
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
@@ -34,6 +36,17 @@
 					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 				</fieldset>
 			</g:form>
+			-->
+			<fieldset class="texto">
+				Nombre:<g:field type="text" name="nombres" />
+				Continente:<g:field type="text" name="continentes" />
+				Poblacion<g:field type="number" name="poblacions" />	
+			</fieldset>
+			<fieldset>
+			<button name="b" type="button" 
+						onclick="${remoteFunction(action:'save',
+			params: '{nombre: nombres.value, continente: continentes.value, poblacion: poblacions.value}')}" >Registrar pais</button>
+			</fieldset>	
 		</div>
 	</body>
 </html>

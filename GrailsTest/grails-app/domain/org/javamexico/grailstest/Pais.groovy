@@ -6,7 +6,7 @@ class Pais {
 	String nombre
 	String continente
 	Integer poblacion
-	
+	static belongsTo = [pais:Pais]
     static constraints = {
 	
 	nombre(blank: false)

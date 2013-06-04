@@ -2,13 +2,12 @@ package org.javamexico.grailstest
 
 class Estado {
 
-   	String idEstado
-	String nombre
+   	String nombre
 	Pais pais
 	Integer poblacion
-	
+	static hasMany = [estados:Estado]	
+
     static constraints = {
-	idEstado(blank: false)
 	nombre(blank: false)
 	pais(nullable: false)
 	poblacion(blank: true)

@@ -3,6 +3,10 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
+		<g:setProvider library="jquery"/>
+		<g:javascript library='jquery'/>
+		
+
 		<g:set var="entityName" value="${message(code: 'cadena.label', default: 'Cadena')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
@@ -26,14 +30,26 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form action="save" >
+			<!--<g:form action="save" >
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
+				
 				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+			<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
 				</fieldset>
+				
 			</g:form>
+			-->
+			<fieldset class="texto">
+				Introduce cadena:<g:field type="text" name="cadena" />	
+			</fieldset>
+			<fieldset>
+			<button type="button" name="b"
+						onclick="${remoteFunction(action:'save',
+									 params: '\'cadenaRecibida=\' + cadena.value')}" >Registrar cadena</button>
+			</fieldset>	
+			
 		</div>
 	</body>
 </html>

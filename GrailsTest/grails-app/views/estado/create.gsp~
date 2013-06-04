@@ -52,9 +52,9 @@
 			
 			</fieldset>
 			<fieldset>
-				<button type="button" name="b" 
+				<input type="button" name="b" value="Registrar estado"
 						onclick="${remoteFunction(action:'save',
-						params: '{nombre: nombre.value, pais:selectPais.value, poblacion: poblacion.value}')}" >Registrar estado</button>
+									params: '{nombre: nombre.value, pais:selectPais.value, poblacion: poblacion.value}')}" />
 			</fieldset>	
 		</div>
 	</body>

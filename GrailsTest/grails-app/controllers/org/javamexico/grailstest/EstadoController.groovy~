@@ -25,7 +25,7 @@ class EstadoController {
 		def ide = params.pais
 		params.pais = Pais.get(ide)
 		println params.nombre
-		println params.pais.poblacion
+		println params.pais
 		println params.poblacion
         def estadoInstance = new Estado(params)
         if (!estadoInstance.save(flush: true)) {
