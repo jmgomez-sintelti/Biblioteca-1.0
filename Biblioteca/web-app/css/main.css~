@@ -1,0 +1,45 @@
+#header {
+width: 778px;
+background: #FFFFFF url(../images/header_background.gif)
+height: 70px;
+margin: 0px auto;
+}
+repeat-x;
+#header h1 {
+font-family:Arial,sans-serif;
+color: white;
+padding: 20px 0 0 6px;
+font-size:1.6em;
+}
+body {
+margin: 0px;
+padding: 0px;
+text-align:center;
+font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: normal;
+font-size-adjust: none;
+font-stretch: normal;
+color: #333333;
+}
+#page {
+width: 778px;
+margin: 0px auto;
+padding: 4px 0;
+text-align:left;
+}
+#content {
+float: left;
+width: 560px;
+color: #000;
+}
+#sidebar {
+float: right;
+width: 200px;
+color: #000;
+padding: 3px;
+}
+

@@ -1,0 +1,176 @@
+
+@font-face{
+font-family: ubuntuBold;
+src: url(../fuentes/Ubuntu-B.ttf) format('truetype');
+}
+@font-face{
+font-family: Mutant
+src: url(../fuentes/MutantA-MediumOblique.ttf) format('truetype')
+}
+
+#primer{
+	color:black;
+	font-size:30px;
+	text-shadow: 5px 5px 5px #cecece;
+	font-family: ubuntuBold;
+	}
+
+#footer{
+	clear:both;
+	text-align: center;
+	padding: 3px;
+	border-top: 1px solid #333;
+}
+
+#index{
+	font-family:Mutant;
+	font-size:25px;	
+	align="justify";
+}
+
+#topbar{
+	text-align:left;
+	width: 778px;
+	height: 20px;
+	margin: 0px auto;
+}
+
+#topbar #menu {
+	top:20%;
+	margin-bottom:20px;
+	float: right;
+	width: 240px;
+	text-align: right;
+	font-size: 15px;
+	margin :10px 10px 0px 100px;
+}
+
+#header {
+width: 778px;
+background: #FFFFFF url(../images/apples-on-books-lrg.jpg);
+background-size: 100% 100%;
+height: 200px;
+margin: 15px auto;
+}
+
+
+#header h1 {
+
+color: white;
+padding: 0 0 0 6px;
+font-size:35px;
+/*text-shadow: 5px 5px 5px #cecece;*/
+font-family: ubuntuBold;
+}
+
+
+body {
+margin: 0px;
+padding: 0px;
+text-align:center;
+font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: normal;
+font-size-adjust: none;
+font-stretch: normal;
+color: #333333;
+background: #cecece;
+}
+#page {
+width: 778px;
+height: 100%;
+margin: 0px auto;
+padding: 10px 0;
+text-align:left;
+background: #ffffff;
+}
+#content {
+float: left;
+width: 560px;
+
+color: black;
+}
+#sidebar {
+float: right;
+width: 200px;
+color: #000;
+padding: 3px;
+word-wrap:break-word;
+}
+
+
+/*Menu de navegacion*/
+
+
+
+.nav {
+	background-color: #3333CC;
+	padding: 0.5em 0.75em;
+	   -moz-box-shadow: 0 0 3px 1px #ffffff;
+	-webkit-box-shadow: 0 0 3px 1px #ffffff;
+	        box-shadow: 0 0 3px 1px #ffffff;
+	zoom: 1;
+}
+
+.nav ul {
+	overflow: hidden;
+	padding-left: 0;
+	zoom: 1;
+}
+
+.nav li {
+	display: block;
+	float: left;
+	list-style-type: none;
+	margin-right: 0.5em;
+	padding: 0;
+}
+
+.nav a {
+	color: #ffffff;
+	display: block;
+	padding: 0.25em 0.7em;
+	text-decoration: none;
+	   -moz-border-radius: 0.3em;
+	-webkit-border-radius: 0.3em;
+	        border-radius: 0.3em;
+}
+
+.nav a:active, .nav a:visited {
+	color: #ffffff;
+}
+
+.nav a:focus, .nav a:hover {
+	background-color: #ffffff;
+	color: #000000;
+	outline: none;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+	
+}
+
+.no-borderradius .nav a:focus, .no-borderradius .nav a:hover {
+	background-color: transparent;
+	color: #444444;
+	text-decoration: underline;
+}
+
+.nav a.home, .nav a.list, .nav a.create {
+	background-position: 0.7em center;
+	background-repeat: no-repeat;
+	text-indent: 25px;
+}
+
+.nav a.home {
+	background-image: url(../images/skin/house.png);
+}
+
+.nav a.list {
+	background-image: url(../images/skin/database_table.png);
+}
+
+.nav a.create {
+	background-image: url(../images/skin/database_add.png);
+}
