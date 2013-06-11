@@ -22,7 +22,7 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list autor">
-			<table border="1">
+			<table >
 				<g:if test="${autorInstance?.nombre}">
 				<tr>				
 				<td>

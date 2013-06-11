@@ -48,18 +48,18 @@
 			
 				<g:if test="${autorInstance?.aMaterno}">
 				<tr>				
-					<li class="fieldcontain">
+					
 					
 					<td><span id="aMaterno-label" class="property-label"><g:message code="autor.aMaterno.label" default="Apellido Materno:" /></span></td>
 					
 			<td>			<span class="property-value" aria-labelledby="aMaterno-label"><g:fieldValue bean="${autorInstance}" field="aMaterno"/></span></td>
 					</tr>
-				</li>
+				
 				</g:if>
 			
 				<g:if test="${autorInstance?.libros}">
 					<tr>				
-					<li class="fieldcontain">
+					
 					
 					<td><span id="libros-label" class="property-label"><g:message code="autor.libros.label" default="Libro(s):" /></span></td>
 					<td>
@@ -67,7 +67,7 @@
 						<span class="property-value" aria-labelledby="libros-label"><g:link controller="libro" action="show" id="${l.id}">${l?.encodeAsHTML()}</g:link></span><br/>
 						</g:each></td>
 					</tr>
-				</li>
+				
 				</g:if>
 			</table>
 			</ol>

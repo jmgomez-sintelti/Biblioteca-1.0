@@ -2,7 +2,7 @@
 
 
 
-<table border="1">
+<table>
 <tr>
 <div class="fieldcontain ${hasErrors(bean: prestamoInstance, field: 'ejemplares', 'error')} ">
 	<td><label for="ejemplares">

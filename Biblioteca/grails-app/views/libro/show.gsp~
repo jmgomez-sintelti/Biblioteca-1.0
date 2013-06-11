@@ -52,22 +52,22 @@
 			
 				<g:if test="${libroInstance?.autores}">
 				<tr>
-					<td><span id="autores-label" class="property-label"><g:message code="libro.autores.label" default="Autor(es):" /></span><td>
+					<td><span id="autores-label" class="property-label"><g:message code="libro.autores.label" default="Autor(es):" /></span></td>
 					
 						<td><g:each in="${libroInstance.autores}" var="a">
 						<span class="property-value" aria-labelledby="autores-label"><g:link controller="autor" action="show" id="${a.id}">${a?.encodeAsHTML()}</g:link></span>
-						</g:each><td>
+						</g:each></td>
 					
 				</tr>
 				</g:if>
 			
 				<g:if test="${libroInstance?.editoriales}">
 				<tr>
-					<td><span id="editoriales-label" class="property-label"><g:message code="libro.editoriales.label" default="Editorial" /></span><td>
+					<td><span id="editoriales-label" class="property-label"><g:message code="libro.editoriales.label" default="Editorial" /></span></td>
 					
 						<td><g:each in="${libroInstance.editoriales}" var="e">
 						<span class="property-value" aria-labelledby="editoriales-label"><g:link controller="editorial" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
-						</g:each><td>
+						</g:each></td>
 					
 				</tr>
 				</g:if>

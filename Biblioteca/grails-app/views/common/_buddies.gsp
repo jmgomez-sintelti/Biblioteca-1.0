@@ -1,37 +1,39 @@
 <div id="buddies">
-	<div class="title">Menu</div>
-	<ul>
+	<div id="title" align="center">Menu</div>
+	<nav>
+	<ul type="none">
 		<li >
-			<a href="autor">
+			<a id="autor" href="${createLink(uri: '/autor')}">
 				Autor
 			</a>
 		</li>
 		<li >
-			<a href="editorial">
+			<a href="${createLink(uri: '/editorial')}">
 				Editorial
 			</a>
 		</li>
 		<li >
-			<a href="libro">
+			<a href="${createLink(uri: '/libro')}">
 				Libro
 			</a>
 		</li>
 		<li >
-			<a href="ejemplar">
+			<a href="${createLink(uri: '/ejemplar')}">
 				Ejemplar
 			</a>
 		</li>
 		<li >
-			<a href="usuario">
+			<a href="${createLink(uri: '/usuario')}">
 				Usuario
 			</a>
 		</li>
 		<li >
-			<a href="prestamo">
+			<a href="${createLink(uri: '/prestamo')}">
 				Prestamo
 			</a>
 		</li>
 
 
 	</ul>
+	</nav>
 </div>

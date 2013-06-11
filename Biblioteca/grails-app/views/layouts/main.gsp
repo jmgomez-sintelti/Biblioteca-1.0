@@ -6,7 +6,7 @@
 		</title>
 		<link rel="stylesheet" href="${createLinkTo(dir:'css',file:'main2.css')}" />
 		<link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'icono_libro.gif')}" type="image/x-icon" />
-		<g:layoutHead />
+		
 		<g:javascript library="application" />
 	</head>
 	<body>
@@ -20,6 +20,7 @@
 			</div>
 			<div id="content">
 				<g:layoutBody />
+
 			</div>
 			<div id="sidebar">
 				<g:render template="/common/buddies" />

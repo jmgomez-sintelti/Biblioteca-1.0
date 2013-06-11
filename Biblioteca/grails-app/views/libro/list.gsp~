@@ -20,7 +20,7 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table>
+			<table border="1">
 				<thead>
 					<tr>
 					
@@ -28,7 +28,7 @@
 					
 						<g:sortableColumn property="edicion" title="${message(code: 'libro.edicion.label', default: 'Edicion')}" />
 					
-						<g:sortableColumn property="isbn" title="${message(code: 'libro.isbn.label', default: 'Isbn')}" />
+						<g:sortableColumn property="isbn" title="${message(code: 'libro.isbn.label', default: 'ISBN')}" />
 					
 					</tr>
 				</thead>

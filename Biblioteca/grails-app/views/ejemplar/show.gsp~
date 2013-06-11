@@ -1,6 +1,6 @@
 
 <%@ page import="biblioteca.Ejemplar" %>
-<%@ page import="biblioteca.Autor" %>
+
 <!DOCTYPE html>
 <html>
 	<head>

@@ -9,7 +9,7 @@
 		<g:message code="prestamo.ejemplares.label" default="Ejemplares:" />
 		
 	</label></td>
-	<td><g:select name="ejemplares" from="${biblioteca.Ejemplar.list()}" multiple="multiple" optionKey="id" size="5" value="${tarjetaInstance?.ejemplar?.estado}" class="many-to-many"/></td>
+	<td><g:select name="ejemplares" from="${biblioteca.Ejemplar.list()}" multiple="multiple" optionKey="id" size="5" value="${prestamoInstance?.ejemplares*.id}" class="many-to-many"/></td>
 </div>
 </tr>
 <tr>

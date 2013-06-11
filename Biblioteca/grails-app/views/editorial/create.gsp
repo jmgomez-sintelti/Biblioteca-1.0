@@ -27,7 +27,7 @@
 			</ul>
 			</g:hasErrors>
 			<g:form action="save" >
-			<table border="1">
+			<table >
 				<!--<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>-->

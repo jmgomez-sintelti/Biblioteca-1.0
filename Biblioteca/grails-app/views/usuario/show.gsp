@@ -22,7 +22,7 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list usuario">
-			<table border ="1">
+			<table>
 				<g:if test="${usuarioInstance?.nombre}">
 				<tr>
 					<td><span id="nombre-label" class="property-label"><g:message code="usuario.nombre.label" default="Nombre:" /></span></td>

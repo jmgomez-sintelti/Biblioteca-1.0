@@ -25,10 +25,12 @@
 			
 				<g:if test="${editorialInstance?.nombre}">
 				<table border="1">
-					<tr><td><span id="nombre-label" class="property-label"><g:message code="editorial.nombre.label" default="Editorial:" /></span>
-					</td>
-					</tr>
-						<tr><span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${editorialInstance}" field="nombre"/></span></td>
+					<tr>
+						<td>
+							<span id="nombre-label" class="property-label"><g:message code="editorial.nombre.label" default="Editorial:" /></span>
+						</td>
+					
+						<td><span class="property-value" aria-labelledby="nombre-label"><g:fieldValue bean="${editorialInstance}" field="nombre"/></span></td>
 					</tr>
 				</table>
 				</g:if>

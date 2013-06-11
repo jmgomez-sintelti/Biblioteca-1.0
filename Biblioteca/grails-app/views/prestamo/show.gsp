@@ -22,7 +22,7 @@
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			<ol class="property-list prestamo">
-				<table border="1">
+				<table>
 				<g:if test="${prestamoInstance?.ejemplares}">
 				
 					<td><span id="ejemplares-label" class="property-label"><g:message code="prestamo.ejemplares.label" default="Ejemplares" /></span></td>

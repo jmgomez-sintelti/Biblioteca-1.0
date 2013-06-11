@@ -1,7 +1,7 @@
 <%@ page import="biblioteca.Autor" %>
 
 
-<table border="1">
+<table >
 <tr>
 <div class="fieldcontain ${hasErrors(bean: autorInstance, field: 'nombre', 'error')} ">
 	<td><label for="nombre">
@@ -14,7 +14,7 @@
 <tr>
 <div class="fieldcontain ${hasErrors(bean: autorInstance, field: 'aPaterno', 'error')} ">
 	<td><label for="aPaterno">
-		<g:message code="autor.aPaterno.label" default="AP aterno" />
+		<g:message code="autor.aPaterno.label" default="Apellido Paterno" />
 		
 	</label></td>
 	<td><g:textField name="aPaterno" maxlength="50" value="${autorInstance?.aPaterno}"/></td>
@@ -23,7 +23,7 @@
 <tr>
 <div class="fieldcontain ${hasErrors(bean: autorInstance, field: 'aMaterno', 'error')} ">
 	<td><label for="aMaterno">
-		<g:message code="autor.aMaterno.label" default="AM aterno" />
+		<g:message code="autor.aMaterno.label" default="Apellido Materno" />
 		
 	</label></td>
 	<td><g:textField name="aMaterno" maxlength="50" value="${autorInstance?.aMaterno}"/></td>

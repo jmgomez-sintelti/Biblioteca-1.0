@@ -20,7 +20,8 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table border="1">
+		
+			<table border="0″ cellpadding="0" cellspacing="0">
 				
 					<tr>
 					

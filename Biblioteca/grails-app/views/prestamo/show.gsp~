@@ -25,11 +25,11 @@
 				<table border="1">
 				<g:if test="${prestamoInstance?.ejemplares}">
 				
-					<span id="ejemplares-label" class="property-label"><g:message code="prestamo.ejemplares.label" default="Ejemplares" /></span>
+					<td><span id="ejemplares-label" class="property-label"><g:message code="prestamo.ejemplares.label" default="Ejemplares" /></span></td>
 					
-						<g:each in="${prestamoInstance.ejemplares}" var="e">
+						<td><g:each in="${prestamoInstance.ejemplares}" var="e">
 						<span class="property-value" aria-labelledby="ejemplares-label"><g:link controller="ejemplar" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
-						</g:each>
+						</g:each></td>
 					
 				
 				</g:if>

@@ -5,7 +5,7 @@
 <tr>
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'nombre', 'error')} ">
 	<td><label for="nombre">
-		<g:message code="usuario.nombre.label" default="Nombre" />
+		<g:message code="usuario.nombre.label" default="Nombre:" />
 		
 	</label></td>
 	<td><g:textField name="nombre" maxlength="50" value="${usuarioInstance?.nombre}"/></td>
@@ -14,7 +14,7 @@
 <tr>
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'aPaterno', 'error')} ">
 	<td><label for="aPaterno">
-		<g:message code="usuario.aPaterno.label" default="Apellido Paterno" />
+		<g:message code="usuario.aPaterno.label" default="Apellido Paterno:" />
 		
 	</label></td>
 	<td><g:textField name="aPaterno" maxlength="50" value="${usuarioInstance?.aPaterno}"/></td>
@@ -23,7 +23,7 @@
 <tr>
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'aMaterno', 'error')} ">
 	<td><label for="aMaterno">
-		<g:message code="usuario.aMaterno.label" default="Apellido Materno" />
+		<g:message code="usuario.aMaterno.label" default="Apellido Materno:" />
 		
 	</label></td>
 	<td><g:textField name="aMaterno" maxlength="50" value="${usuarioInstance?.aMaterno}"/></td>

@@ -6,7 +6,7 @@
 	<g:link controller="user" action="logout">Logout</g:link>
 	</g:if>
 	<g:else>
-	<g:link controller="user" action="login">Login</g:link>
+	<g:link controller="user" action="login"><div id="imagen"><div id="log" align="center">Login</div></div></g:link>
 	</g:else>
 	</nobr>
 </div>

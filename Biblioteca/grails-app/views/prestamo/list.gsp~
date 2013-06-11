@@ -37,7 +37,7 @@
 						<td><g:link action="show" id="${prestamoInstance.id}">${fieldValue(bean: prestamoInstance, field: "fEntrega")}</g:link></td>
 					
 						<td><g:formatDate date="${prestamoInstance.fPrestamo}" /></td>
-						<td><g:link action="show" id="${prestamoInstance.id}">${fieldValue(bean: prestamoInstance, field: "usuario")}</g:link> </td>
+						<td><g:link action="show" id="${prestamoInstance.id}">${fieldValue(bean: prestamoInstance, field: "usuarios")}</g:link> </td>
 					
 					</tr>
 				</g:each>

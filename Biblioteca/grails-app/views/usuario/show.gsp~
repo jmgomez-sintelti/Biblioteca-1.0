@@ -52,9 +52,9 @@
 			
 				<g:if test="${usuarioInstance?.direccion}">
 				<tr>
-					<span id="direccion-label" class="property-label"><g:message code="usuario.direccion.label" default="Direccion" /></span>
+					<td><span id="direccion-label" class="property-label"><g:message code="usuario.direccion.label" default="Direccion" /></span></td>
 					
-						<span class="property-value" aria-labelledby="direccion-label"><g:fieldValue bean="${usuarioInstance}" field="direccion"/></span>
+						<td><span class="property-value" aria-labelledby="direccion-label"><g:fieldValue bean="${usuarioInstance}" field="direccion"/></span></td>
 					
 				</tr>
 				</g:if>
