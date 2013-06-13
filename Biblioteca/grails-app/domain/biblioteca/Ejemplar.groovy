@@ -10,6 +10,6 @@ class Ejemplar {
     }
 
 	String toString(){
-		return id
+		return libros
 	}
 }

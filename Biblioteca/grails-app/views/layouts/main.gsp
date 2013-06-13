@@ -22,9 +22,11 @@
 				<g:layoutBody />
 
 			</div>
+			<sec:ifLoggedIn>
 			<div id="sidebar">
 				<g:render template="/common/buddies" />
 			</div>
+			</sec:ifLoggedIn>
 			<div id="footer">
 				<g:render template="/common/footer" />
 			</div>

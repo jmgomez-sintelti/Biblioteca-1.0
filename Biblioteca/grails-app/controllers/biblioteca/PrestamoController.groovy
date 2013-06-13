@@ -1,26 +1,32 @@
 package biblioteca
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugins.springsecurity.Secured
 
 class PrestamoController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-
+	@Secured(['ROLE_ADMIN'])
     def index() {
         redirect(action: "list", params: params)
     }
-
+	@Secured(['ROLE_ADMIN'])
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         [prestamoInstanceList: Prestamo.list(params), prestamoInstanceTotal: Prestamo.count()]
     }
-
+	@Secured(['ROLE_ADMIN'])
+	def prestamoService
+	def lista
+	@Secured(['ROLE_ADMIN'])
     def create() {
-        [prestamoInstance: new Prestamo(params)]
+        
+		def lista = prestamoService.lista(params) 
+		[lista:lista,prestamoInstance: new Prestamo(params)]
     }
 
-	def prestamoService
-
+	
+	@Secured(['ROLE_ADMIN'])
     def save() {
 		
 		prestamoService.estado(params)		
@@ -36,7 +42,7 @@ class PrestamoController {
         flash.message = message(code: 'default.created.message', args: [message(code: 'prestamo.label', default: 'Prestamo'), prestamoInstance.id])
         redirect(action: "show", id: prestamoInstance.id)
     }
-
+	@Secured(['ROLE_ADMIN'])
     def show(Long id) {
         def prestamoInstance = Prestamo.get(id)
         if (!prestamoInstance) {
@@ -47,7 +53,7 @@ class PrestamoController {
 
         [prestamoInstance: prestamoInstance]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def edit(Long id) {
         def prestamoInstance = Prestamo.get(id)
         if (!prestamoInstance) {
@@ -55,10 +61,10 @@ class PrestamoController {
             redirect(action: "list")
             return
         }
-
+		def lista = prestamoService.lista(params) 
         [prestamoInstance: prestamoInstance]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def update(Long id, Long version) {
         def prestamoInstance = Prestamo.get(id)
         if (!prestamoInstance) {
@@ -87,7 +93,7 @@ class PrestamoController {
         flash.message = message(code: 'default.updated.message', args: [message(code: 'prestamo.label', default: 'Prestamo'), prestamoInstance.id])
         redirect(action: "show", id: prestamoInstance.id)
     }
-
+	@Secured(['ROLE_ADMIN'])
     def delete(Long id) {
         def prestamoInstance = Prestamo.get(id)
         if (!prestamoInstance) {

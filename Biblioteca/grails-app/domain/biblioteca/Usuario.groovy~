@@ -6,12 +6,17 @@ class Usuario {
 	String aPaterno
 	String aMaterno
 	String direccion
-	static hasMany = [prestamos:Prestamo]	
+		
 
     static constraints = {
-		nombre(size:3..50)
-		aPaterno(size:5..50)
-		aMaterno(size:5..50)
-		direccion(size:5..50)
+		nombre(nullable:false)
+		aPaterno(nullable:false)
+		aMaterno(nullable:false)
+		direccion(nullable:false)
     }
+		
+	String toString(){
+		return nombre+" "+aPaterno+" "+aMaterno
+	}
+
 }

@@ -20,14 +20,14 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<table border="1">
+			<table>
 				<thead>
 					<tr>
 					
 						
 					<g:sortableColumn property="id" title="${message(code: 'ejemplar.estado.label', default: 'Identificador')}" />
 					<g:sortableColumn property="estado" title="${message(code: 'ejemplar.estado.label', default: 'Disponible')}" />
-					<g:sortableColumn property="libro" title="${message(code: 'ejemplar.estado.label', default: 'Libro')}"/>
+					<g:sortableColumn property="libros" title="${message(code: 'ejemplar.estado.label', default: 'Libro')}"/>
 					</tr>
 				</thead>
 				<tbody>

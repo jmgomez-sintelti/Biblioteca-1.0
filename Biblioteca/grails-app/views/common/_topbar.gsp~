@@ -1,13 +1,13 @@
 
 <div id="menu">
 	<nobr>
-	<g:if test="${session.user}">
-		<b>${session.user?.nombre}&nbsp;${session.user?.apellido}</b> 
-	<g:link controller="user" action="logout">Logout</g:link>
-	</g:if>
-	<g:else>
-	<g:link controller="user" action="login"><div id="imagen" align="center"><div id="log" align="center">Login</div></div></g:link>
-	</g:else>
+	<sec:ifLoggedIn>
+	<label id="hola">Bienvenido</label>	 :<label id="nombreDeUsuario"><sec:loggedInUserInfo field="username"/></label>
+	<br/><div id="salir"><a id="salir" href="${createLink(uri: '/logout')}">Salir</a></div>
+	</sec:ifLoggedIn>
+	<sec:ifNotLoggedIn>
+	<a href="${createLink(uri: '/login')}"><div id="imagen"><div id="log" align="center">Login</div></div></a>
+	</sec:ifNotLoggedIn>
 	</nobr>
 </div>
 

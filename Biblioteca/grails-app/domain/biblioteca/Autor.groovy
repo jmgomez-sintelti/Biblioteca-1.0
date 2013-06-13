@@ -6,10 +6,11 @@ class Autor {
 	String nombre
 	String aPaterno
 	String aMaterno
+
     static constraints = {
-		nombre(size:3..50)
-		aPaterno(size:5..50)
-		aMaterno(size:5..50)
+		nombre(blank:false)
+		aPaterno(blank:false)
+		
     }
 
 	String toString(){

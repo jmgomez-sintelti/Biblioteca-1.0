@@ -2,6 +2,7 @@
 
 
 
+
 <table>
 <tr>
 <div class="fieldcontain ${hasErrors(bean: prestamoInstance, field: 'ejemplares', 'error')} ">
@@ -9,7 +10,10 @@
 		<g:message code="prestamo.ejemplares.label" default="Ejemplares:" />
 		
 	</label></td>
-	<td><g:select name="ejemplares" from="${biblioteca.Ejemplar.list()}" multiple="multiple" optionKey="id" size="5" value="${prestamoInstance?.ejemplares*.id}" class="many-to-many"/></td>
+	<td><g:select name="ejemplares" from="${lista}" multiple="multiple" optionKey="id" size="5" 
+		
+	optionValue="${(prestamoInstance?.ejemplares?.id)}" class="many-to-many"/></td>
+
 </div>
 </tr>
 <tr>

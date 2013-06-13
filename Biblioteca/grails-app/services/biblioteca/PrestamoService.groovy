@@ -13,4 +13,19 @@ class PrestamoService {
 		}
 	}
 
+	def lista(params){
+		
+		def lista = []
+		
+		Ejemplar.list().each{
+			
+			if(it.estado == true){
+				lista.push(it)
+				println(it)
+			}
+		}
+			
+		return lista
+	}
+
 }

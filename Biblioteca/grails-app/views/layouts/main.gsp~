@@ -20,11 +20,13 @@
 			</div>
 			<div id="content">
 				<g:layoutBody />
-<img src="../images/user_add.png"/>
+
 			</div>
+			<sec:isLoggedIn>
 			<div id="sidebar">
 				<g:render template="/common/buddies" />
 			</div>
+			</sec:isLoggedIn>
 			<div id="footer">
 				<g:render template="/common/footer" />
 			</div>

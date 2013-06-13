@@ -1,24 +1,25 @@
 package biblioteca
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugins.springsecurity.Secured
 
 class EditorialController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-
+	@Secured(['ROLE_ADMIN'])
     def index() {
         redirect(action: "list", params: params)
     }
-
+	@Secured(['ROLE_ADMIN'])
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         [editorialInstanceList: Editorial.list(params), editorialInstanceTotal: Editorial.count()]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def create() {
         [editorialInstance: new Editorial(params)]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def save() {
         def editorialInstance = new Editorial(params)
         if (!editorialInstance.save(flush: true)) {
@@ -29,7 +30,7 @@ class EditorialController {
         flash.message = message(code: 'default.created.message', args: [message(code: 'editorial.label', default: 'Editorial'), editorialInstance.id])
         redirect(action: "show", id: editorialInstance.id)
     }
-
+	@Secured(['ROLE_ADMIN'])
     def show(Long id) {
         def editorialInstance = Editorial.get(id)
         if (!editorialInstance) {
@@ -40,7 +41,7 @@ class EditorialController {
 
         [editorialInstance: editorialInstance]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def edit(Long id) {
         def editorialInstance = Editorial.get(id)
         if (!editorialInstance) {
@@ -51,7 +52,7 @@ class EditorialController {
 
         [editorialInstance: editorialInstance]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def update(Long id, Long version) {
         def editorialInstance = Editorial.get(id)
         if (!editorialInstance) {
@@ -80,7 +81,7 @@ class EditorialController {
         flash.message = message(code: 'default.updated.message', args: [message(code: 'editorial.label', default: 'Editorial'), editorialInstance.id])
         redirect(action: "show", id: editorialInstance.id)
     }
-
+	@Secured(['ROLE_ADMIN'])
     def delete(Long id) {
         def editorialInstance = Editorial.get(id)
         if (!editorialInstance) {

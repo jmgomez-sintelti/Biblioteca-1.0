@@ -9,10 +9,10 @@ class Usuario {
 		
 
     static constraints = {
-		nombre(size:3..50)
-		aPaterno(size:5..50)
-		aMaterno(size:5..50)
-		direccion(size:5..50)
+		nombre(blank:false)
+		aPaterno(blank:false)
+		aMaterno(blank:false)
+		direccion(blank:false)
     }
 		
 	String toString(){

@@ -5,10 +5,11 @@ class Libro {
 	String edicion
 	String isbn
 	static hasMany = [autores:Autor,editoriales:Editorial]
+	
 	static constraints = {
-		titulo(size:5..50)
-		edicion(size:5..50)
-		isbn(size:5..50)
+		titulo(blank:false)
+		edicion(blank:false)
+		isbn(blank:false)
     }
 
 	String toString(){

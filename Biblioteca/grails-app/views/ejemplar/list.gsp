@@ -27,7 +27,7 @@
 						
 					<g:sortableColumn property="id" title="${message(code: 'ejemplar.estado.label', default: 'Identificador')}" />
 					<g:sortableColumn property="estado" title="${message(code: 'ejemplar.estado.label', default: 'Disponible')}" />
-					<g:sortableColumn property="libro" title="${message(code: 'ejemplar.estado.label', default: 'Libro')}"/>
+					<g:sortableColumn property="libros.titulo" title="${message(code: 'ejemplar.estado.label', default: 'Libro')}"/>
 					</tr>
 				</thead>
 				<tbody>

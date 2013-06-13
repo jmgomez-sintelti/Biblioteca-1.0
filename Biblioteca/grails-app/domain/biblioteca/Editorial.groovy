@@ -5,7 +5,7 @@ class Editorial {
 	String nombre
 
     static constraints = {
-		nombre(size:5..30)
+		nombre(blank:false)
     }
 
 	String toString(){

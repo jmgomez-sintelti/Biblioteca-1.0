@@ -3,10 +3,14 @@
 
 
 <div class="fieldcontain ${hasErrors(bean: editorialInstance, field: 'nombre', 'error')} ">
-	<label for="nombre">
+<table>	
+	<tr>	
+	<td><label for="nombre">
 		<g:message code="editorial.nombre.label" default="Nombre" />
 		
-	</label>
-	<g:textField name="nombre" maxlength="30" value="${editorialInstance?.nombre}"/>
+	</label></td>
+	<td><g:textField name="nombre" maxlength="30" value="${editorialInstance?.nombre}"/></td>
+	</tr>
+</table>
 </div>
 

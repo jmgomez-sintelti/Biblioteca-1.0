@@ -1,24 +1,25 @@
 package biblioteca
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugins.springsecurity.Secured
 
 class LibroController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-
+	@Secured(['ROLE_ADMIN'])
     def index() {
         redirect(action: "list", params: params)
     }
-
+	@Secured(['ROLE_ADMIN'])
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         [libroInstanceList: Libro.list(params), libroInstanceTotal: Libro.count()]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def create() {
         [libroInstance: new Libro(params)]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def save() {
         def libroInstance = new Libro(params)
         if (!libroInstance.save(flush: true)) {
@@ -29,7 +30,7 @@ class LibroController {
         flash.message = message(code: 'default.created.message', args: [message(code: 'libro.label', default: 'Libro'), libroInstance.id])
         redirect(action: "show", id: libroInstance.id)
     }
-
+	@Secured(['ROLE_ADMIN'])
     def show(Long id) {
         def libroInstance = Libro.get(id)
         if (!libroInstance) {
@@ -40,7 +41,7 @@ class LibroController {
 
         [libroInstance: libroInstance]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def edit(Long id) {
         def libroInstance = Libro.get(id)
         if (!libroInstance) {
@@ -51,7 +52,7 @@ class LibroController {
 
         [libroInstance: libroInstance]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def update(Long id, Long version) {
         def libroInstance = Libro.get(id)
         if (!libroInstance) {
@@ -80,7 +81,7 @@ class LibroController {
         flash.message = message(code: 'default.updated.message', args: [message(code: 'libro.label', default: 'Libro'), libroInstance.id])
         redirect(action: "show", id: libroInstance.id)
     }
-
+	@Secured(['ROLE_ADMIN'])
     def delete(Long id) {
         def libroInstance = Libro.get(id)
         if (!libroInstance) {

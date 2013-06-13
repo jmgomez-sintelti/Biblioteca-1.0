@@ -45,7 +45,7 @@
 			
 				<g:if test="${prestamoInstance?.fPrestamo}">
 				<tr>
-					<td><span id="fPrestamo-label" class="property-label"><g:message code="prestamo.fPrestamo.label" default="FP restamo" /></span></td>
+					<td><span id="fPrestamo-label" class="property-label"><g:message code="prestamo.fPrestamo.label" default="Fecha de Prestamo" /></span></td>
 					
 						<td><span class="property-value" aria-labelledby="fPrestamo-label"><g:formatDate date="${prestamoInstance?.fPrestamo}" /></span></td>
 					

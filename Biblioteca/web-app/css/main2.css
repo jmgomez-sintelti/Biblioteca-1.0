@@ -12,18 +12,28 @@ font-family: insanibu;
 src: url(../fuentes/Insanibu.ttf) format('truetype');
 }
 @font-face{
-font-family:stone;
-src: url(../fuentes/STONB___.TFF) format('truetype');
+font-family:pepsi;
+src: url(../fuentes/PEPSI_pl.ttf) format('truetype');
 }
 @font-face{
 font-family:regular;
 src: url(../fuentes/Ubuntu-R.ttf) format('truetype');
 }
+@font-face{
+font-family:disco;
+src: url(../fuentes/Disko_OT.otf) format('truetype');
+}
+
+@font-face{
+font-family:just;
+src: url(../fuentes/JustMeAgainDownHere.ttf) format('truetype');
+}
+
 
 
 /*h1 en index.gsp*/
 #primer{
-	color:#4013Af;
+	color:#645e8b;
 	font-size:40px;
 	text-shadow: 10px 10px 10px #cecece;
 	font-family: ubuntuBold;
@@ -98,7 +108,7 @@ background:#cecece;
 /*Header de la pagina, imagen y formato del texto*/
 #header {
 width: 778px;
-background: #FFFFFF url(../images/apples-on-books-lrg.jpg);
+background: #FFFFFF url(../images/apples-on-books-lrg.png);
 height: 200px;
 margin: 15px auto;
 }
@@ -155,7 +165,7 @@ margin-right:10px;
 word-wrap:break-word;
 border:2px solid;
 border-radius:25px 25px 25px 25px;	
-background:#3a2e5c;
+background:#645e8b;
 box-shadow:0px 0px 25px black;
 -webkit-box-shadow:0px 0px 25px black;
 -moz-box-shadow:0px 0px 25px black;
@@ -164,7 +174,7 @@ box-shadow:0px 0px 25px black;
 }
 
 #sidebar:hover{
-background:#8c6dd7;
+background:#524f68;
 transform:scale(1.1,1.1);
 -webkit-transform:scale(1.1,1.1);
 -moz-transform:scale(1.1,1.1);
@@ -173,6 +183,7 @@ transform:scale(1.1,1.1);
 #title{
 font-family:Mutant;
 font-size:30px;
+color:#cecece;
 }
 
 nav {
@@ -192,7 +203,7 @@ nav ul li a{
 font-size:20px;
 color:white;
 font-family:regular;
-background:#4013Af;
+background:#110A3B;
 color: white;
 text-decoration:none;
 border: 1px solid  white;
@@ -208,7 +219,7 @@ opacity:0.8;
 }
 
 nav ul li a:hover{
-background:#3a2e5c;
+background:#9c95c5;
 color:white;
 border:2px solid white;
 box-shadow: 0px 0px 25px white;
@@ -223,7 +234,6 @@ transform:scale(1.1,1.1);
 }
 /*Formato a todas las tablas*/
 table{
-
 font-family: Verdana, Arial, Helvetica, sans-serif;
 font-size:20px;
 text-align: left;
@@ -232,9 +242,11 @@ background:#EFF4FB ;
 color: #333;
 }
 
+
 label{
 font-family: insanibu;
 font-size:18px;
+
 }
 
 input{
@@ -289,7 +301,7 @@ font-family: “Trebuchet MS”, Arial;
 
 
 .nav {
-	background-color: #3a2e5c;
+	background-color: #645e8b;
 	padding: 0.5em 0.75em;
 	   -moz-box-shadow: 0 0 3px 1px #ffffff;
 	-webkit-box-shadow: 0 0 3px 1px #ffffff;
@@ -364,6 +376,67 @@ font-family: “Trebuchet MS”, Arial;
 #list-autor h1{
 position:right;
 color:#3a2e5c;
+}
+
+#hola{
+font-family:pepsi;
+color:#645e8b;
+}
+
+#nombreDeUsuario{
+position:left;
+font-family:disco;
+color:#110A3B;
+font-size:25px;
+}
+
+#salir{
+margin-left:140px;
+padding-right:5px;
+width:40px;
+border:2px solid black;
+border-radius:5px 5px 5px 5px;
+-webkit-border-radius:5px 5px 5px 5px;
+-moz-border-radius:5px 5px 5px 5px;
+-o-border-radius:5px 5px 5px 5px;
+background:#cecece;
+transform:rotate(10deg);
+-webkit-transform:rotate(10deg);
+-moz-transform:rotate(10deg);
+-o-transform:rotate(10deg);
+}
+
+#salir:hover{
+transform:rotate(0deg);
+-webkit-transform:rotate(0deg);
+-moz-transform:rotate(0deg);
+-o-transform:rotate(0deg);
+}
+#salir a{
+font-family:ubuntuBold;
+font-size:15px;
+}
+
+#logeo{
+
+margin-left:170px;
+margin-bottom:10px;
+
+}
+
+.consulta{
+font-size:15px;
+font-family:regular;
+color:#645e8b;
+
+}
+
+option{
+background:#645e8b;
+}
+
+h1{
+font-color:#110A3B;
 }
 
 /*http://colorschemedesigner.com/*/

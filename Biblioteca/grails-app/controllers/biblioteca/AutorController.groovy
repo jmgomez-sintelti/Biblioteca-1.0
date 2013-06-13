@@ -1,26 +1,30 @@
 package biblioteca
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugins.springsecurity.Secured
 
 class AutorController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-
+	@Secured(['ROLE_ADMIN'])
     def index() {
         redirect(action: "list", params: params)
     }
 
+	@Secured(['ROLE_ADMIN'])
     def list(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
+		params.max = Math.min(max ?: 10, 100)
         [autorInstanceList: Autor.list(params), autorInstanceTotal: Autor.count()]
     }
 
+	@Secured(['ROLE_ADMIN'])
     def create() {
         [autorInstance: new Autor(params)]
-    }
+	}
 
+	@Secured(['ROLE_ADMIN'])
     def save() {
-        def autorInstance = new Autor(params)
+	    def autorInstance = new Autor(params)
         if (!autorInstance.save(flush: true)) {
             render(view: "create", model: [autorInstance: autorInstance])
             return
@@ -30,6 +34,7 @@ class AutorController {
         redirect(action: "show", id: autorInstance.id)
     }
 
+	@Secured(['ROLE_ADMIN'])
     def show(Long id) {
         def autorInstance = Autor.get(id)
         if (!autorInstance) {
@@ -40,7 +45,8 @@ class AutorController {
 
         [autorInstance: autorInstance]
     }
-
+	
+	@Secured(['ROLE_ADMIN'])
     def edit(Long id) {
         def autorInstance = Autor.get(id)
         if (!autorInstance) {
@@ -51,7 +57,7 @@ class AutorController {
 
         [autorInstance: autorInstance]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def update(Long id, Long version) {
         def autorInstance = Autor.get(id)
         if (!autorInstance) {
@@ -80,7 +86,8 @@ class AutorController {
         flash.message = message(code: 'default.updated.message', args: [message(code: 'autor.label', default: 'Autor'), autorInstance.id])
         redirect(action: "show", id: autorInstance.id)
     }
-
+	
+	@Secured(['ROLE_ADMIN'])
     def delete(Long id) {
         def autorInstance = Autor.get(id)
         if (!autorInstance) {

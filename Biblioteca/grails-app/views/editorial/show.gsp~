@@ -24,7 +24,7 @@
 			<ol class="property-list editorial">
 			
 				<g:if test="${editorialInstance?.nombre}">
-				<table border="1">
+				<table >
 					<tr>
 						<td>
 							<span id="nombre-label" class="property-label"><g:message code="editorial.nombre.label" default="Editorial:" /></span>

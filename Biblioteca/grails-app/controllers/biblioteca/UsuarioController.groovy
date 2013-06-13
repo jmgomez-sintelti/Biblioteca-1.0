@@ -1,24 +1,25 @@
 package biblioteca
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugins.springsecurity.Secured
 
 class UsuarioController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-
+	@Secured(['ROLE_ADMIN'])
     def index() {
         redirect(action: "list", params: params)
     }
-
+	@Secured(['ROLE_ADMIN'])
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         [usuarioInstanceList: Usuario.list(params), usuarioInstanceTotal: Usuario.count()]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def create() {
         [usuarioInstance: new Usuario(params)]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def save() {
         def usuarioInstance = new Usuario(params)
         if (!usuarioInstance.save(flush: true)) {
@@ -29,7 +30,7 @@ class UsuarioController {
         flash.message = message(code: 'default.created.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuarioInstance.id])
         redirect(action: "show", id: usuarioInstance.id)
     }
-
+	@Secured(['ROLE_ADMIN'])
     def show(Long id) {
         def usuarioInstance = Usuario.get(id)
         if (!usuarioInstance) {
@@ -40,7 +41,7 @@ class UsuarioController {
 
         [usuarioInstance: usuarioInstance]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def edit(Long id) {
         def usuarioInstance = Usuario.get(id)
         if (!usuarioInstance) {
@@ -51,7 +52,7 @@ class UsuarioController {
 
         [usuarioInstance: usuarioInstance]
     }
-
+	@Secured(['ROLE_ADMIN'])
     def update(Long id, Long version) {
         def usuarioInstance = Usuario.get(id)
         if (!usuarioInstance) {
@@ -80,7 +81,7 @@ class UsuarioController {
         flash.message = message(code: 'default.updated.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuarioInstance.id])
         redirect(action: "show", id: usuarioInstance.id)
     }
-
+	@Secured(['ROLE_ADMIN'])
     def delete(Long id) {
         def usuarioInstance = Usuario.get(id)
         if (!usuarioInstance) {
