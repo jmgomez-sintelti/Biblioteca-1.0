@@ -17,10 +17,11 @@ class PrestamoController {
     }
 	@Secured(['ROLE_ADMIN'])
 	def prestamoService
-	def lista
+	
 	@Secured(['ROLE_ADMIN'])
     def create() {
-        
+        def instancia = new Prestamo(params)
+		
 		def lista = prestamoService.lista(params) 
 		[lista:lista,prestamoInstance: new Prestamo(params)]
     }
@@ -28,12 +29,13 @@ class PrestamoController {
 	
 	@Secured(['ROLE_ADMIN'])
     def save() {
+		def prestamoInstance = new Prestamo(params)
 		
-		prestamoService.estado(params)		
+		prestamoService.estado(prestamoInstance)		
 		
 		
         		
-		def prestamoInstance = new Prestamo(params)
+		
         if (!prestamoInstance.save(flush: true)) {
             render(view: "create", model: [prestamoInstance: prestamoInstance])
             return
@@ -55,43 +57,54 @@ class PrestamoController {
     }
 	@Secured(['ROLE_ADMIN'])
     def edit(Long id) {
-        def prestamoInstance = Prestamo.get(id)
+		def prestamoInstance = Prestamo.get(id)
+		
+		
+        def lista = prestamoService.listaEdit(prestamoInstance)
         if (!prestamoInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'prestamo.label', default: 'Prestamo'), id])
             redirect(action: "list")
             return
         }
-		def lista = prestamoService.lista(params) 
-        [prestamoInstance: prestamoInstance]
+		
+        [lista: lista, prestamoInstance: prestamoInstance]
     }
 	@Secured(['ROLE_ADMIN'])
     def update(Long id, Long version) {
+		
         def prestamoInstance = Prestamo.get(id)
+		prestamoService.estadoUpdate(prestamoInstance)
+		
         if (!prestamoInstance) {
+			
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'prestamo.label', default: 'Prestamo'), id])
             redirect(action: "list")
             return
         }
 
+		 def lista = prestamoService.lista(params)
         if (version != null) {
             if (prestamoInstance.version > version) {
                 prestamoInstance.errors.rejectValue("version", "default.optimistic.locking.failure",
                           [message(code: 'prestamo.label', default: 'Prestamo')] as Object[],
                           "Another user has updated this Prestamo while you were editing")
-                render(view: "edit", model: [prestamoInstance: prestamoInstance])
+                render(view: "edit", model: [prestamoInstance: prestamoInstance,lista:lista])
                 return
             }
         }
-
+		
         prestamoInstance.properties = params
-
+		println "actualizado"
+		prestamoService.estadoFalse(prestamoInstance)
+       
         if (!prestamoInstance.save(flush: true)) {
-            render(view: "edit", model: [prestamoInstance: prestamoInstance])
+            render(view: "edit", model: [prestamoInstance: prestamoInstance,lista:lista])
             return
         }
 
         flash.message = message(code: 'default.updated.message', args: [message(code: 'prestamo.label', default: 'Prestamo'), prestamoInstance.id])
         redirect(action: "show", id: prestamoInstance.id)
+		
     }
 	@Secured(['ROLE_ADMIN'])
     def delete(Long id) {

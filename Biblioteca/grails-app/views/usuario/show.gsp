@@ -34,7 +34,7 @@
 			
 				<g:if test="${usuarioInstance?.aPaterno}">
 				<tr>
-					<td><span id="aPaterno-label" class="property-label"><g:message code="usuario.aPaterno.label" default="AP aterno" /></span></td>
+					<td><span id="aPaterno-label" class="property-label"><g:message code="usuario.aPaterno.label" default="Apellido Paterno" /></span></td>
 					
 						<td><span class="property-value" aria-labelledby="aPaterno-label"><g:fieldValue bean="${usuarioInstance}" field="aPaterno"/></span></td>
 					
@@ -43,7 +43,7 @@
 			
 				<g:if test="${usuarioInstance?.aMaterno}">
 				<tr>
-					<td><span id="aMaterno-label" class="property-label"><g:message code="usuario.aMaterno.label" default="AM aterno" /></span></td>
+					<td><span id="aMaterno-label" class="property-label"><g:message code="usuario.aMaterno.label" default="Apellido Materno" /></span></td>
 					
 						<td><span class="property-value" aria-labelledby="aMaterno-label"><g:fieldValue bean="${usuarioInstance}" field="aMaterno"/></span></td>
 					

@@ -23,21 +23,22 @@
 			<table>
 				<thead>
 					<tr>
-					
+						<g:sortableColumn property="estado" title="${message(code: 'prestamo.estado.label',default: 'Prestamo activo')}" />
 						<g:sortableColumn property="fEntrega" title="${message(code: 'prestamo.fEntrega.label', default: 'Fecha de Entrega')}" />
-					
 						<g:sortableColumn property="fPrestamo" title="${message(code: 'prestamo.fPrestamo.label', default: 'Fecha de Prestamo')}" />
 						<g:sortableColumn property="usuario" title="${message(code: 'prestamo.fPrestamo.label', default: 'Usuario')}" />
+						
 					</tr>
 				</thead>
 				<tbody>
 				<g:each in="${prestamoInstanceList}" status="i" var="prestamoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
+						<td><g:link action="show" id="${prestamoInstance.id}">${fieldValue(bean: prestamoInstance, field: "estado")}</g:link></td>					
 						<td><g:link action="show" id="${prestamoInstance.id}">${fieldValue(bean: prestamoInstance, field: "fEntrega")}</g:link></td>
-					
 						<td><g:formatDate date="${prestamoInstance.fPrestamo}" /></td>
 						<td><g:link action="show" id="${prestamoInstance.id}">${fieldValue(bean: prestamoInstance, field: "usuarios")}</g:link> </td>
+						
 					
 					</tr>
 				</g:each>

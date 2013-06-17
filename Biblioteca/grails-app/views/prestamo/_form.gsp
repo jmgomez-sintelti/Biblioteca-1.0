@@ -1,19 +1,23 @@
 <%@ page import="biblioteca.Prestamo" %>
 
 
-
-
 <table>
 <tr>
 <div class="fieldcontain ${hasErrors(bean: prestamoInstance, field: 'ejemplares', 'error')} ">
 	<td><label for="ejemplares">
-		<g:message code="prestamo.ejemplares.label" default="Ejemplares:" />
+		<g:message code="prestamo.ejemplares.label" default="Ejemplares" />
 		
 	</label></td>
-	<td><g:select name="ejemplares" from="${lista}" multiple="multiple" optionKey="id" size="5" 
+	<td><g:select name="ejemplares" from="${lista}" multiple="multiple" optionKey="id" size="5" value="${prestamoInstance?.ejemplares*.id}" class="many-to-many"/></td>
+</div>
+</tr>
+<tr>
+<div class="fieldcontain ${hasErrors(bean: prestamoInstance, field: 'estado', 'error')} ">
+	<td><label for="estado">
+		<g:message code="prestamo.estado.label" default="Estado" />
 		
-	optionValue="${(prestamoInstance?.ejemplares?.id)}" class="many-to-many"/></td>
-
+	</label></td>
+	<td><g:checkBox name="estado" value="${prestamoInstance?.estado}" /></td>
 </div>
 </tr>
 <tr>
@@ -37,10 +41,10 @@
 <tr>
 <div class="fieldcontain ${hasErrors(bean: prestamoInstance, field: 'usuarios', 'error')} ">
 	<td><label for="usuarios">
-		<g:message code="prestamo.usuarios.label" default="Usuario:" />
+		<g:message code="prestamo.usuarios.label" default="Usuarios" />
 		
 	</label></td>
-	<td><g:select name="usuarios" from="${biblioteca.Usuario.list()}" multiple="multiple" optionKey="id" size="5" value="${prestamoInstance?.usuarios*.id}" class="many-to-many"/></td>
+	<td><g:select name="usuarios" from="${biblioteca.Usuario.list()}"  optionKey="id" size="5" value="${prestamoInstance?.usuarios*.id}" class="many-to-many"/></td>
 </div>
 </tr>
 </table>

@@ -1,6 +1,6 @@
 <%@ page import="biblioteca.Ejemplar" %>
 
-
+<h1>${totales}</h1>
 <table>
 <tr>
 <div class="fieldcontain ${hasErrors(bean: ejemplarInstance, field: 'estado', 'error')} ">

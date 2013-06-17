@@ -17,7 +17,7 @@
 		<g:message code="ejemplar.libros.label" default="Libros" />
 		
 	</label></td>
-	<td><g:select name="libros" from="${biblioteca.Libro.list()}" multiple="multiple" optionKey="id" size="5" value="${ejemplarInstance?.libros*.id}" class="many-to-many"/></td>
+	<td><g:select name="libros" from="${biblioteca.Libro.list()}"  optionKey="id" size="5" value="${ejemplarInstance?.libros*.id}" class="many-to-many"/></td>
 </div>
 </tr>
 </table>

@@ -1,7 +1,7 @@
 <%@ page import="biblioteca.Libro" %>
 
 
-<table border="1">
+<table >
 <tr>
 <div class="fieldcontain ${hasErrors(bean: libroInstance, field: 'titulo', 'error')} ">
 	<td><label for="titulo">

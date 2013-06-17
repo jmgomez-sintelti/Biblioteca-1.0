@@ -2,30 +2,58 @@ package biblioteca
 
 class PrestamoService {
 
-    def estado(params){ 
+    def estado(prestamoInstance){ 
 		
-		def ejemplar = params.list('ejemplares')
-		Iterator iter = ejemplar.iterator()
-		
-		while (iter.hasNext()){
-				def objeto = Ejemplar.get(iter.next())
-				objeto.estado = false								
-		}
+		def ejemplar = prestamoInstance.ejemplares
+			ejemplar.each{		
+				if(prestamoInstance.estado == true){				
+					it.estado = false
+					println("cambiado a false")
+					}
+					else{
+					it.estado = true
+					println("cambiado a true")
+					}								
+			}
 	}
 
 	def lista(params){
+		return Ejemplar.findAllByEstado(true)
+	
+	}
+
+	
+
+	def listaEdit(prestamoInstance){
 		
-		def lista = []
-		
-		Ejemplar.list().each{
+		def ejemplar = prestamoInstance.ejemplares
+		def temporal = Ejemplar.findAllByEstado(true)
+		ejemplar.each{
+			temporal.add(it)			
+			println "listado temporal"
+			println it.estado
+		}
+		return temporal 
+	
+	}
+
+	def estadoUpdate(prestamoInstance){
+		def ejemplar = prestamoInstance.ejemplares
+		ejemplar.each{
+			it.estado = true
 			
-			if(it.estado == true){
-				lista.push(it)
-				println(it)
+		}
+	}
+
+	def estadoFalse(prestamoInstance){
+		if(prestamoInstance.estado == true){
+			def ejemplar = prestamoInstance.ejemplares
+			ejemplar.each{
+				it.estado = false
 			}
 		}
-			
-		return lista
+		
 	}
+
 
 }

@@ -8,7 +8,7 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<!--<a href="#show-prestamo" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>-->
+		
 		<div class="nav" role="navigation">
 			<ul>
 				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
@@ -21,17 +21,25 @@
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="property-list prestamo">
 				<table>
 				<g:if test="${prestamoInstance?.ejemplares}">
-				
+				<tr>
 					<td><span id="ejemplares-label" class="property-label"><g:message code="prestamo.ejemplares.label" default="Ejemplares" /></span></td>
 					
 						<td><g:each in="${prestamoInstance.ejemplares}" var="e">
 						<span class="property-value" aria-labelledby="ejemplares-label"><g:link controller="ejemplar" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
 						</g:each></td>
 					
-				
+				</tr>
+				</g:if>
+			
+				<g:if test="${prestamoInstance?.estado}">
+				<tr>
+					<td><span id="estado-label" class="property-label"><g:message code="prestamo.estado.label" default="Estado" /></span></td>
+					
+						<td><span class="property-value" aria-labelledby="estado-label"><g:formatBoolean boolean="${prestamoInstance?.estado}" /></span></td>
+					
+				</tr>
 				</g:if>
 			
 				<g:if test="${prestamoInstance?.fEntrega}">
@@ -62,14 +70,13 @@
 					
 				</tr>
 				</g:if>
-			</table>	
-			</ol>
+			</table>
 			<g:form>
-				<fieldset class="buttons">
+				
 					<g:hiddenField name="id" value="${prestamoInstance?.id}" />
 					<g:link class="edit" action="edit" id="${prestamoInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
+				
 			</g:form>
 		</div>
 	</body>

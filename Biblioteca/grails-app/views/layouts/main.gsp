@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="${createLinkTo(dir:'css',file:'main2.css')}" />
 		<link rel="shortcut icon" href="${createLinkTo(dir:'images',file:'icono_libro.gif')}" type="image/x-icon" />
 		
-		<g:javascript library="application" />
+		
 	</head>
 	<body>
 		<div id="page">

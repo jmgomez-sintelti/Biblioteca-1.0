@@ -5,7 +5,7 @@ class Prestamo {
 	Date fPrestamo
 	Date fEntrega
 	static hasMany = [ejemplares:Ejemplar,usuarios:Usuario]
-	static hasMany = []	
+	
 
     static constraints = {
     

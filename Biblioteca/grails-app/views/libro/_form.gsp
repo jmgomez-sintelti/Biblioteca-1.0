@@ -41,10 +41,10 @@
 <tr>
 <div class="fieldcontain ${hasErrors(bean: libroInstance, field: 'editoriales', 'error')} ">
 	<td><label for="editoriales">
-		<g:message code="libro.editoriales.label" default="Editoriales" />
+		<g:message code="libro.editoriales.label" default="Editorial" />
 		
 	</label></td>
-	<td><g:select name="editoriales" from="${biblioteca.Editorial.list()}" multiple="multiple" optionKey="id" size="5" value="${libroInstance?.editoriales*.id}" class="many-to-many"/></td>
+	<td><g:select name="editoriales" from="${biblioteca.Editorial.list()}"  optionKey="id" size="5" value="${libroInstance?.editoriales*.id}" class="many-to-many"/></td>
 </div>
 </tr>
 </table>
